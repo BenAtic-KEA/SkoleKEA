@@ -1,5 +1,4 @@
 package Files;
-// hsfgfdsgfsg
 public class Student {
 
     private String mail;
