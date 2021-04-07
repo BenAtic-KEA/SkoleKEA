@@ -1,0 +1,10 @@
+Inheritance(nedarvning) bruges til at indgå en "kontrakt".
+kontrakten betyder at alt hvad superClass'en indeholder kan også benyttes af en subclass.
+dvs. at en subclass er en instans af en superclass. SuperClasses bruges bl.a. til at man ikke genskriver den samme kode flere gange.
+eller har mulighed for at genbruge de classes man har lavet på et senere tidspunkt (til abdre projekter). "Reusabillity"
+En subclass kan kun have 1 inheritance (SuperClass), men har mulighed for at have flere interfaces.
+
+inheritance bliver erklæret ved at skrive "extends 'ClassName' ".
+Superclassen skal kaldes i subclassens constructer for at det virker.
+
+Som eksempel kan det ses i Exercise2, hvordan jeg har min Super Class "Spell" som nedarves til forskellige elementer af Spell.

@@ -9,7 +9,7 @@ public class FileCounter {
             throws FileNotFoundException {
 
         // lokalisere min txt fil.
-        File howManyWords = new File("SkoleKEA/Resources/HowManyWords.txt");
+        File howManyWords = new File("SkoleKEA/src/inheritance_Files_aflevering/Exercise1/inheritance");
         // laver en scanner der læser min fil
         Scanner fileReader = new Scanner(howManyWords);
 

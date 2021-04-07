@@ -1,4 +1,4 @@
-package inheritance_Files_aflevering.Spell;
+package inheritance_Files_aflevering.Exercise2;
 
 public class SpellCaster {
 

@@ -1,4 +1,4 @@
-package inheritance_Files_aflevering.Spell;
+package inheritance_Files_aflevering.Exercise2;
 
 public class FireSpell extends Spell { // jeg extender spell for at arve fra Classen "Spell"
     // min attribute der gør FireSpell anderledes fra "Spell"
