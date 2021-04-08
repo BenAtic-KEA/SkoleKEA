@@ -1,5 +1,5 @@
 Inheritance(nedarvning) bruges til at indgå en "kontrakt".
-kontrakten betyder at alt hvad superClass'en indeholder kan også benyttes af en subclass.
+kontrakten betyder at alt hvad superClass'en indeholder kan også benyttes af en subclass (polymorfi).
 dvs. at en subclass er en instans af en superclass. SuperClasses bruges bl.a. til at man ikke genskriver den samme kode flere gange.
 eller har mulighed for at genbruge de classes man har lavet på et senere tidspunkt (til abdre projekter). "Reusabillity"
 En subclass kan kun have 1 inheritance (SuperClass), men har mulighed for at have flere interfaces.
