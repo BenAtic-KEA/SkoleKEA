@@ -1,5 +1,9 @@
 package Exceptions.opgaver;
 
+import java.util.Scanner;
+
+import static java.lang.Character.toUpperCase;
+
 public class PasswordAuth {
 
     public static boolean passwordIsCorrect(String password, String actualPassword){
@@ -12,36 +16,81 @@ public class PasswordAuth {
         return false;
     }
 
-    public static boolean createPasswordIsValid(String password){
-        String[] passwordArray = password.split("");
-        if(password.length() < 40 && password.length() > 6){
+    public static boolean passwordLenghtIsValid(String password){
+        if(password.length() <= 40 && password.length() >= 6){
 
-
+        return true;
         }
         return false;
     }
 
-    public static boolean containsCharAndInt(String[] passwordArray){
-        int intCount = 0;
-        int CharCount = 0;
+
+    public static boolean containsCharAndInt(String password){
+        char[] passwordArray = password.toCharArray();
+
+        String charInPassword = "abcdefghijklmnopqrstuvxyz";
+        char[] charInPasswordArray = charInPassword.toCharArray();
+        String intInPassword = "1234567890";
+
+        int intCounter = 0;
+        int charCounter = 0;
+
         for(int i = 0; i < passwordArray.length; i++){
-            try{
-            if( Integer.parseInt(passwordArray[i]){
-                intCount++;
+
+
+            char currentIndex = toUpperCase(passwordArray[i]);
+            for(int j = 0; j < charInPasswordArray.length; j++){
+                if(currentIndex == toUpperCase(charInPasswordArray[j])){
+
+                    j = charInPasswordArray.length;
+                    charCounter++;
                 }
-            }catch (NumberFormatException e){
-                // no number
             }
-            try{
-                    if( (char)passwordArray[i] != (char)passwordArray[i].contains('1' + '2' + '3' + '4' + '5' + '6' + '7' + '8' + '9' + '0'))
-                CharCount++;
+            for(int n = 0; n < intInPassword.toCharArray().length; n++){
+                if(currentIndex == toUpperCase(intInPassword.toCharArray()[n])){
+
+                    n = intInPassword.toCharArray().length;
+                    intCounter++;
                 }
-            }catch (NumberFormatException e){
-                // no number
             }
 
         }
+        return intCounter > 0 && charCounter > 0;
     }
+
+    public static boolean containsRightCharacters(String password){
+        String upperCasedPassword = password.toUpperCase();
+
+        return !(upperCasedPassword.contains("Æ") || upperCasedPassword.contains("Ø") || upperCasedPassword.contains("Å"));
+    }
+
+    public static boolean containsDifferentChars(String password){
+
+       char[] passwordArray = password.toCharArray();
+
+       int counter = 0;
+       char currentLetter = passwordArray[0];
+
+       for(int i = 0; i < passwordArray.length; i++) {
+
+           if (currentLetter == passwordArray[i]) {
+               counter++;
+
+               if (counter >= 4) {
+                   return false;
+               }
+
+           } else {
+
+               counter = 1;
+           }
+
+           currentLetter = passwordArray[i];
+
+       }
+       return true;
+    }
+
 }
 
 
