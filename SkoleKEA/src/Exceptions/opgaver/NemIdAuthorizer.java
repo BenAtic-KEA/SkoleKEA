@@ -10,9 +10,6 @@ public class NemIdAuthorizer {
 
     public static void main(String[] args) throws FileNotFoundException{
 
-
-
-
         boolean correctInformation = false;
             while(!correctInformation) {
                 try {
@@ -20,11 +17,15 @@ public class NemIdAuthorizer {
                     Scanner userInput = new Scanner(System.in);
                     System.out.println("CprNr:");
                     String cprNr = userInput.nextLine();
-                    System.out.println("Password");
+                    System.out.println("Password between 6 and 40 characters");
                     String password = userInput.nextLine();
                     isValidInput(cprNr, password);
-                    System.out.println("User now logged in");
-                    correctInformation = isValidInput(cprNr,password);
+                    if(PasswordAuth.isValidPassword(cprNr,password)) {
+                        System.out.println("User now logged in");
+                        correctInformation = isValidInput(cprNr, password);
+                    } else{
+                        System.out.println("Password not allowed");
+                    }
 
                 } catch (InputMismatchException e) {
                     e.printStackTrace();
@@ -44,15 +45,16 @@ public class NemIdAuthorizer {
             throw new InputMismatchException();
         }
 
-        for (int i = 0; i < brugerListe().size(); i++) {
+        /*for (int i = 0; i < brugerListe().size(); i++) {
             if (cprNr.equals(brugerListe().get(i).getUsername())) {
                 if (password.equals(brugerListe().get(i).getPassword())) {
                     return true;
                 }
             }
-
         }
         throw new NoSuchUserException();
+    */
+        return true;
     }
 
 
