@@ -24,15 +24,24 @@ public class PasswordAuth {
         }
         return false;
     }
-
+    //kontrollere om passworded passer med eksisterende password
     public static boolean passwordIsCorrect(String password, String actualPassword){
         return password.equals(actualPassword);
     }
 
+    /**
+     * Imellem 6 tegn og 40 tegn
+     * @param password
+     * @return boolean
+     */
+
     public static boolean passwordLengthIsValid(String password){
         return password.length() <= 40 && password.length() >= 6;
     }
-
+    /**
+     *
+    Indeholder bogstaver og tal
+     */
     public static boolean containsCharAndInt(String password){
         char[] passwordArray = password.toUpperCase().toCharArray();
         String charInPassword = "abcdefghijklmnopqrstuvxyz";
@@ -63,7 +72,9 @@ public class PasswordAuth {
         }
         return intCounter > 0 && charCounter > 0;
     }
+    /*
 
+     */
     public static boolean containsRightCharacters(String password){
         String upperCasedPassword = password.toUpperCase();
 
@@ -101,5 +112,6 @@ public class PasswordAuth {
 
         return !password.toUpperCase().equals(username.toUpperCase());
     }
+
 
 }
