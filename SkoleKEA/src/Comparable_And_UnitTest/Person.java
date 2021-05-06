@@ -21,14 +21,18 @@ public class Person implements Comparable<Person>{
             return 1;
         } else if(this.age < other.age){
             return -1;
-        } else {
-            if(this.height > other.height){
-                return 1;
-            } else if (this.height < other.height){
-                return -1;
-            } else{
-                return 0;
-            }
+        } else if(this.height > other.height){
+            return 1;
+        } else if (this.height < other.height){
+            return -1;
+        } else{
+            return 0;
         }
+    }
+
+    @Override
+    public String toString(){
+
+        return name + " Age: " + age + " Height: " + height;
     }
 }

@@ -6,7 +6,13 @@ import java.util.Scanner;
 import static java.lang.Character.toUpperCase;
 
 public class PasswordAuth {
+    /**
+     * Kontrollerer kodeord ud fra samme krav som til nemID
+     * @param username
+     * @param password
+     * @return boolean
 
+     */
     public static boolean isValidPassword(String username, String password) throws InputMismatchException {
 
         if(passwordLengthIsValid(password)) {
@@ -72,8 +78,11 @@ public class PasswordAuth {
         }
         return intCounter > 0 && charCounter > 0;
     }
-    /*
 
+    /**
+     *  indeholder ikke ÆØÅ
+     * @param password
+     * @return boolean
      */
     public static boolean containsRightCharacters(String password){
         String upperCasedPassword = password.toUpperCase();
@@ -102,12 +111,23 @@ public class PasswordAuth {
         return true;
     }
 
+    /**
+     * ingen whitespace i starten eller slutningen af koden
+     * @param password
+     * @return boolean
+     */
     public static boolean noSpaceInStartOrEnd(String password){
         String[] passwordArray = password.split("");
 
         return !(passwordArray[0].equals(" ") || passwordArray[passwordArray.length - 1].equals(" "));
     }
 
+    /**
+     * Kontrollere at username og password ikke er det samme
+     * @param username
+     * @param password
+     * @return boolean
+     */
     public static boolean differentUsernameAndPassword(String username, String password){
 
         return !password.toUpperCase().equals(username.toUpperCase());
